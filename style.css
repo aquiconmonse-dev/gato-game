@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Nunito', sans-serif;
+  color: #493c69;
+  background:
+    radial-gradient(circle at 15% 10%, #f9d9ef, transparent 32%),
+    radial-gradient(circle at 90% 85%, #d9d4ff, transparent 35%),
+    #f5efff;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.game-shell {
+  width: min(100%, 540px);
+  padding: 16px;
+  border: 1px solid white;
+  border-radius: 28px;
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 18px 60px rgba(83,61,130,.18);
+  backdrop-filter: blur(12px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  background: #ffe2f2;
+  font-size: 25px;
+}
+
+.brand strong {
+  display: block;
+  font-size: 17px;
+}
+
+.brand small {
+  display: block;
+  color: #887ba5;
+  font-size: 11px;
+}
+
+.pause-btn {
+  border: 0;
+  border-radius: 13px;
+  width: 42px;
+  height: 42px;
+  color: white;
+  background: #8d78c9;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.pause-btn:disabled {
+  opacity: .35;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.hud-card {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #eee5ff;
+  border-radius: 14px;
+  background: white;
+  min-width: 0;
+}
+
+.hud-card span {
+  display: block;
+  color: #9a8bb6;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.hud-card strong {
+  display: block;
+  margin-top: 2px;
+  color: #594879;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.game-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 5px solid white;
+  border-radius: 20px;
+  background: #8f83d0;
+  box-shadow: 0 9px 25px rgba(75,55,117,.18);
+  touch-action: none;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 5;
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(40,27,73,.28);
+  backdrop-filter: blur(5px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-panel {
+  width: min(100%, 365px);
+  padding: 25px 22px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 25px;
+  background: rgba(255,250,255,.96);
+  box-shadow: 0 15px 45px rgba(37,20,73,.2);
+}
+
+.overlay-cat {
+  font-size: 54px;
+}
+
+.eyebrow {
+  color: #c17caf;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.overlay h1 {
+  color: #634c91;
+  font-size: clamp(24px, 6vw, 32px);
+}
+
+.overlay p:not(.eyebrow) {
+  color: #817294;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.how-to {
+  display: grid;
+  gap: 6px;
+  margin: 13px 0 18px;
+  padding: 11px;
+  border-radius: 13px;
+  background: #f4efff;
+  color: #74658f;
+  font-size: 11px;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 15px;
+  color: white;
+  background: linear-gradient(135deg,#f29bca,#987fe0);
+  box-shadow: 0 6px 0 #8068bd;
+  font: 900 15px 'Nunito',sans-serif;
+  cursor: pointer;
+}
+
+.main-btn:active {
+  transform: translateY(4px);
+}
+
+.touch-controls {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 13px;
+  pointer-events: none;
+}
+
+.touch-controls button {
+  width: 57px;
+  height: 57px;
+  border: 2px solid white;
+  border-radius: 19px;
+  color: white;
+  background: rgba(81,61,130,.42);
+  font-size: 22px;
+  font-weight: 900;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.touch-controls button.active {
+  background: rgba(241,143,197,.85);
+}
+
+.footer-note {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 15px;
+  padding-top: 12px;
+  color: #9385ad;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+@media(max-width:420px) {
+  body { padding: 8px; }
+  .game-shell { padding: 10px; }
+  .overlay-panel { padding: 19px 15px; }
+  .touch-controls button {
+    width: 51px;
+    height: 51px;
+  }
+}

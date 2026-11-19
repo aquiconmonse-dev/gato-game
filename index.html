@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mabel Cat Jump ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">🐱</span>
+        <div>
+          <strong>Mabel Cat Jump</strong>
+          <small>Una aventura hacia las estrellas</small>
+        </div>
+      </div>
+      <button id="pauseBtn" class="pause-btn" disabled>Ⅱ</button>
+    </header>
+
+    <section class="hud">
+      <div class="hud-card">
+        <span>PUNTOS</span>
+        <strong id="score">0</strong>
+      </div>
+      <div class="hud-card">
+        <span>MUNDO</span>
+        <strong id="worldLabel">🌎 Tierra</strong>
+      </div>
+      <div class="hud-card">
+        <span>RÉCORD</span>
+        <strong id="best">0</strong>
+      </div>
+    </section>
+
+    <section class="game-frame">
+      <canvas id="gameCanvas" width="480" height="800"></canvas>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-panel">
+          <div class="overlay-cat">🐱</div>
+          <p class="eyebrow">BIENVENIDA A LA AVENTURA</p>
+          <h1 id="overlayTitle">Mabel Cat Jump</h1>
+          <p id="overlayText">
+            Ayuda al gatito a saltar cada vez más alto.
+            ¡Explora la Tierra, el cielo, el espacio y el universo!
+          </p>
+          <div class="how-to">
+            <span>⌨️ PC: ← → o A / D</span>
+            <span>📱 Celular: botones o toca los lados</span>
+          </div>
+          <button id="startBtn" class="main-btn">JUGAR ✨</button>
+        </div>
+      </div>
+
+      <div class="touch-controls">
+        <button id="leftBtn">◀</button>
+        <button id="rightBtn">▶</button>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <span>✦ Salta sobre las plataformas</span>
+      <span>✦ Esquiva los obstáculos</span>
+      <span>✦ ¡Llega al universo!</span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
